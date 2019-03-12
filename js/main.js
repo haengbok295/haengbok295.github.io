@@ -29,7 +29,7 @@ $(document).ready(function() {
         $('#mhs-select').html("<option value='semua'>Semua</option>"+gender_result);
     //});
 
-    };
+    }
 
     var networkDataReceiver = false;
 
