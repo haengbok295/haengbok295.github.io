@@ -1,6 +1,6 @@
 $(document).ready(function() {
     //insiasi API url
-    var _url = 'http://my-json-server.typicode.com/haengbok295/belajar-api/Mahasiswa';
+    var _url = 'https://my-json-server.typicode.com/haengbok295/belajar-api/Mahasiswa';
 
     //untuk menampung data semua mahasiswa
     var result = '';
