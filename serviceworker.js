@@ -5,7 +5,9 @@ var urlToCache = [
     '/css/main.css',
     '/images/ugm.png',
     '/js/jquery.min.js',
-    '/js/main.js'
+    '/js/main.js',
+    '/manifest.json',
+    '/fallback.json',
 ];
 
 // install cache on browser
