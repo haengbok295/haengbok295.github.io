@@ -59,7 +59,7 @@ self.addEventListener('fetch', function(event){
      }else{
          //internet API
          event.respondWith(
-             caches.open('latihan-pwa-cache-v1').then(function(cache){
+             caches.open('Mahasiswa-cache-v1').then(function(cache){
                  return fetch(request).then(function(liveRequest){
                      cache.put(request, liveRequest.clone());
                      //save cache to mahasiswa-cache-v1
