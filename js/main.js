@@ -87,6 +87,11 @@ $(document).ready(function() {
 
 });
 
+//notification
+Notification.requestPermission(function(status){
+    console.log('notif permission status', status);
+});
+
 if('serviceWorker' in navigator){
     window.addEventListener('load', function(){
         navigator.serviceWorker.register('/serviceworker.js').then(
