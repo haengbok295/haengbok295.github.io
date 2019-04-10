@@ -1,28 +1,71 @@
 <html lang="en">
-    <head>
-        <title>Belajar PWA</title>
-        <link  rel="stylesheet" href="/css/main.css">
-        <link  rel="manifest" href="/manifest.json">
-    </head>
-
-    <body>
-        <img src="/images/ugm.png" class="img" alt="logo ugm">
-
-        <h3>Belajar PWA</h3>
-        <br>
-        <button id="show-notification">Show Notification</button>
-        <br><br>
-
-        <label for="mhs-select">Gender </label>
-        <select id="mhs-select">
-            <option value="semua">semua</option>
-        </select>
-
-        <div id="mhs-list">
-            <h3>Data tidak ditemukan</h3>
+<head>
+    <title>RESPONSI UTS PINTA</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center">
+            <img src="/images/ceklis.jpg" class="img" alt="logo">
+            <br>
+            <br>
+            <h3>RESPONSI UTS PINTA</h3>
         </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <center><b>INSERT DATA OBAT</b></center>
+            </div>
+            <div class="card-body">
+                <form id="form-tambah">
+                    <div class="form-group">
+                        <label >Kode Produk</label>
+                        <input type="text" class="form-control" id="kode_produk" placeholder="Kode Obat">
+                    </div>
+                    <div class="form-group">
+                        <label >Nama Obat</label>
+                        <input type="text" class="form-control" id="nama_obat" placeholder="Nama Obat">
+                    </div>
+                    <div class="form-group">
+                        <label >Harga Obat</label>
+                        <input type="text" class="form-control" id="harga_obat" placeholder="Harga Obat">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tambah Obat</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <center><b>TABEL OBAT</b></center>
+            </div>
+            <table id="tabel-obat" class="table-hover table table-bordered">
+                <thead>
+                <tr>
+                    <th><center>KODE PRODUK</center></th>
+                    <th><center>NAMA OBAT</center></th>
+                    <th><center>HARGA OBAT</center></th>
+                    <th><center>OPTION</center></th>
+                </tr>
+                </thead>
+                <tbody>
 
-        <script type="text/javascript" src="/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/js/main.js"></script>
-    </body>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+</body>
 </html>

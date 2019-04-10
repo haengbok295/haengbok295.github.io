@@ -1,7 +1,7 @@
 [
     {
-        "id" : 0,
-        "name" : "YOU ARE OFFLINE",
-        "gender" : "offline"
+        "kode_produk" : 0,
+        "nama_obat" : "YOU ARE OFFLINE",
+        "harga_obat" : 0
     }
 ]

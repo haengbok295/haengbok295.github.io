@@ -1,13 +1,14 @@
-var CACHE_NAME = 'latihan-pwa-cache-v1';
+var CACHE_NAME = 'responsi-uts-cache-v1';
 
 var urlToCache = [
     '/',
     '/css/main.css',
-    '/images/ugm.png',
+    '/images/ceklis.jpg',
     '/js/jquery.min.js',
     '/js/main.js',
-    '/manifest.json',
+    '/bootstrap/js/bootstrap.js',
     '/fallback.json',
+    '/bootstrap/css/bootstrap.css',
 ];
 
 // install cache on browser
@@ -21,7 +22,8 @@ self.addEventListener('install', function(event){
                 return cache.addAll(urlToCache);
             }
         )
-    )
+    );
+    self.skipWaiting();
 });
 
 //aktivasi service worker
@@ -38,6 +40,9 @@ self.addEventListener('activate', function(event){
             );
         })
     );
+    if(self.clients && clients.claim){
+        clients.claim();
+    }
 });
 
 //fetch cache
@@ -59,10 +64,10 @@ self.addEventListener('fetch', function(event){
      }else{
          //internet API
          event.respondWith(
-             caches.open('Mahasiswa-cache-v1').then(function(cache){
+             caches.open('obat-cache-v1').then(function(cache){
                  return fetch(request).then(function(liveRequest){
                      cache.put(request, liveRequest.clone());
-                     //save cache to mahasiswa-cache-v1
+                     //save cache to products-cache-v1
                      return liveRequest;
                  }).catch(function(){
                      return caches.match(request).then(function(response){
@@ -73,14 +78,23 @@ self.addEventListener('fetch', function(event){
              })
          )
      }
-
-    // event.respondWith(
-    //     caches.match(event.request).then(function(response){
-    //         console.log(response);
-    //         if(response){
-    //             return response;
-    //         }
-    //         return fetch(event.request);
-    //     })
-    // )
 });
+
+self.addEventListener('sync', (event)=>{
+    console.log('firing syns');
+    if(event.tag === 'image-fetch'){
+        console.log('sync event fired');
+        event.waitUntil(fetchImage());
+    }
+});
+
+function fetchImage(){
+    console.log('firing fetchImage()');
+    fetch('/images/ugm.png').then((response)=>{
+        return response;
+    }).then((text)=>{
+        console.log('Request success ',text);
+    }).catch((err)=>{
+        console.log('Request failed ',err);
+    })
+}
