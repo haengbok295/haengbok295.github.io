@@ -72,7 +72,7 @@ function tambahBaris(e){
     tambahKeDB({
         kode_produk : kode_produk.value,
         nama_obat : nama_obat.value,
-        harga_obat : harga_obat.value
+        harga_obat : harga_obat.valueph
     });
 
     // append baris baru dari data form
