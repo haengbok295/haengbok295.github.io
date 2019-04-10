@@ -3,3 +3,8 @@
     width: 200px;
     border-radius: 10px;
 }
+
+.text-center{
+    background: rgb(255, 199, 199);
+    height: 300px;
+}
